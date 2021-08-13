@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - name: Rarible1
     kind: ethereum/contract
@@ -13,14 +13,14 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: ./src/mappingForRarible721.ts
+      file: Rarible1/Rarible1.wasm
       entities:
         - StandardNFT
       abis:
         - name: ERC721
-          file: ./abis/ERC721.json
+          file: Rarible1/abis/ERC721.json
         - name: ERC1155
-          file: ./abis/ERC1155.json
+          file: Rarible1/abis/ERC1155.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
@@ -35,14 +35,14 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: ./src/mappingForRarible721.ts
+      file: Rarible1/Rarible1.wasm
       entities:
         - StandardNFT
       abis:
         - name: ERC721
-          file: ./abis/ERC721.json
+          file: Rarible2/abis/ERC721.json
         - name: ERC1155
-          file: ./abis/ERC1155.json
+          file: Rarible2/abis/ERC1155.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer

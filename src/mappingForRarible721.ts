@@ -2,7 +2,6 @@ import { Address, Wrapped, JSONValue, Value, log } from '@graphprotocol/graph-ts
 
 import {
   StandardNFT,
-  StandardNftAttributes,
 } from '../generated/schema';
 
 import {
@@ -13,6 +12,7 @@ import { nftAttributeId } from './helpers/idTemplates';
 import { loadOrCreateStandardNFT } from './helpers/loadOrCreateStandardNFT';
 import {
   ADDRESS_ZERO,
+  hasAttr,
   getStringValue,
   parseJsonFromIpfs
 } from './helpers/common';
@@ -48,26 +48,4 @@ export function processNftMetadata(value: JSONValue, userData: Value): void {
   _nft.symbol           = getStringValue(standardMetadata, 'symbol');
 
   _nft.save();
-
-
-  const attributesObject = standardMetadata.get('attributes');
-  if (!attributesObject) { return; }
-
-  const attributes = attributesObject.toArray();
-  for (let i = 0; i < attributes.length; i++) {
-    const attrMap = attributes[i].toObject();
-
-    let attrName = '';
-    let attrValue = '';
-    if (attrMap.isSet('name')) {
-      attrName = attrMap.get('name').toString();
-      attrValue = attrMap.get('value').toString();
-    }
-
-    const nftAttr = new StandardNftAttributes(nftAttributeId(standardNftId, i.toString()));
-    nftAttr.standardNft = standardNftId;
-    nftAttr.name = attrName;
-    nftAttr.value = attrValue;
-    nftAttr.save();
-  }
 }

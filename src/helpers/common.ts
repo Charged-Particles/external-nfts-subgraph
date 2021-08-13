@@ -7,23 +7,26 @@ export const ONE = BigInt.fromI32(1);
 export const NEG_ONE = BigInt.fromI32(-1);
 
 
+export function hasAttr(obj: TypedMap<string, JSONValue>, key: string): boolean {
+  return (obj.isSet(key) && !obj.get(key).isNull());
+};
+
 export function getStringValue(obj: TypedMap<string, JSONValue>, key: string): string {
-  if (obj.isSet(key) && !obj.get(key).isNull()) {
+  if (hasAttr(obj, key)) {
     return obj.get(key).toString();
   }
   return '';
 };
 
 export function getBigIntValue(obj: TypedMap<string, JSONValue>, key: string): BigInt {
-  if (obj.isSet(key) && !obj.get(key).isNull()) {
+  if (hasAttr(obj, key)) {
     return obj.get(key).toBigInt();
   }
   return ZERO;
 };
 
 export function parseJsonFromIpfs(jsonUri: string): Wrapped<JSONValue> | null {
-  const cleanJsonUri = jsonUri.replace(new RegExp('\\', 'g'), ''); 
-  const ipfsHashParts = cleanJsonUri.split('/');
+  const ipfsHashParts = jsonUri.split('/');
   const ipfsHash = ipfsHashParts[ipfsHashParts.length-1];
 
   if (ipfsHash.length < 1) {
