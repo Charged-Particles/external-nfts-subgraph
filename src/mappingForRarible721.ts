@@ -6,7 +6,7 @@ import {
 
 import {
   Transfer,
-} from '../generated/StandardNFT/ERC721';
+} from '../generated/Rarible1/ERC721';
 
 import { nftAttributeId } from './helpers/idTemplates';
 import { loadOrCreateStandardNFT } from './helpers/loadOrCreateStandardNFT';
