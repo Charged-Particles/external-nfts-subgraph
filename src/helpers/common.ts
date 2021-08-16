@@ -47,12 +47,7 @@ export function parseJsonFromIpfs(jsonUri: string): Wrapped<JSONValue> | null {
 
   const jsonData = json.try_fromBytes(data as Bytes);
   if (jsonData.isError) {
-    log.debug("Metadata found for cannot be parsed as JSON, from metadata URI...");
-    log.debug(jsonUri);
-    jsonData = {}
-  }
-  if (jsonData.isNull()) {
-    log.info('JSON DATA FROM IPFS IS NULL {}', [ipfsHash]);
+    log.info('JSON DATA FROM IPFS IS NULL OR INVALID', [ipfsHash]);
     return null;
   }
 
