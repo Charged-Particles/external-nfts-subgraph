@@ -51,7 +51,7 @@ export function parseJsonFromIpfs(jsonUri: string): Wrapped<JSONValue> | null {
     return null;
   }
 
-  return new Wrapped(jsonData);
+  return new Wrapped(jsonData.value);
 };
 
 const logItems = (value:JSONValue, userData: Value): void => {
