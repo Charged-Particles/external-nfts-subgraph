@@ -24,7 +24,7 @@ export function handleTransfer(event: Transfer): void {
   _nft.save();
 
   if (event.params.from.toHex() == ADDRESS_ZERO) {
-    const jsonData:Wrapped<JSONValue> | null = parseJsonFromIpfs(_nft.metadataUri);
+    const jsonData:Wrapped<JSONValue> | null = (_nft.metadataUri) ? parseJsonFromIpfs(_nft.metadataUri) : null;
     if (jsonData != null) {
       processNftMetadata(jsonData.inner, Value.fromString(_nft.id));
     }

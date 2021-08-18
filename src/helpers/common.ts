@@ -26,6 +26,7 @@ export function getBigIntValue(obj: TypedMap<string, JSONValue>, key: string): B
 };
 
 export function parseJsonFromIpfs(jsonUri: string): Wrapped<JSONValue> | null {
+  log.info("jsonUri: ", [jsonUri]);
   const ipfsHashParts = jsonUri.split('/');
   const ipfsHash = ipfsHashParts[ipfsHashParts.length-1];
 
