@@ -24,7 +24,7 @@ export function handleTransfer(event: Transfer): void {
   _nft.save();
 
   if (event.params.from.toHex() == ADDRESS_ZERO) {
-    const jsonData:Wrapped<JSONValue> | null = parseJsonFromIpfs(_nft.metadataUri);
+    const jsonData:Wrapped<JSONValue> | null = (_nft.metadataUri) ? parseJsonFromIpfs(_nft.metadataUri) : null;
     if (jsonData != null) {
       processNftMetadata(jsonData.inner, Value.fromString(_nft.id));
     }
@@ -40,12 +40,12 @@ export function processNftMetadata(value: JSONValue, userData: Value): void {
   const _nft = StandardNFT.load(standardNftId);
   if (!_nft) { return; }
 
-  _nft.name             = getStringValue(standardMetadata, 'name');
-  _nft.description      = getStringValue(standardMetadata, 'description');
-  _nft.external_url     = getStringValue(standardMetadata, 'external_url');
-  _nft.icon             = getStringValue(standardMetadata, 'icon');
-  _nft.image            = getStringValue(standardMetadata, 'image');
-  _nft.symbol           = getStringValue(standardMetadata, 'symbol');
+  _nft.name             = (hasAttr(standardMetadata, 'name'))          ? getStringValue(standardMetadata, 'name') : '';
+  _nft.description      = (hasAttr(standardMetadata, 'description' ))  ? getStringValue(standardMetadata, 'description') : '';
+  _nft.external_url     = (hasAttr(standardMetadata, 'external_url' )) ? getStringValue(standardMetadata, 'external_url') : '';
+  _nft.icon             = (hasAttr(standardMetadata, 'icon' ))         ? getStringValue(standardMetadata, 'icon') : '';
+  _nft.image            = (hasAttr(standardMetadata, 'image' ))        ? getStringValue(standardMetadata, 'image') : '';
+  _nft.symbol           = (hasAttr(standardMetadata, 'symbol' ))       ? getStringValue(standardMetadata, 'symbol') : '';
 
   _nft.save();
 }

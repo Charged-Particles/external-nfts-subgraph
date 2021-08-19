@@ -1,0 +1,7 @@
+{
+  "network": "mainnet",
+  "rarible1": {
+    "address": "0x60f80121c31a0d46b5279700f9df786054aa5ee5",
+    "startBlock": "10147580"
+  }
+}
