@@ -6,6 +6,7 @@ type StandardNFT @entity {
   tokenAddress: Bytes!
   tokenId: BigInt!
   owner: Bytes
+  creator: Bytes
 
   metadataUri: String
   name: String
