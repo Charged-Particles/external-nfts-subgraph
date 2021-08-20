@@ -27,6 +27,7 @@ export function loadOrCreateStandardNFT(
     const ownerResult = boundNft.try_ownerOf(tokenId);
     if (ownerResult.reverted) {
       _nft.owner = new Address(0);
+      _nft.creator = new Address(0);
     } else {
       _nft.owner = ownerResult.value;
       _nft.creator = ownerResult.value;
