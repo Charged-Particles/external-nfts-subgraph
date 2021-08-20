@@ -77,6 +77,23 @@ export class StandardNFT extends Entity {
     }
   }
 
+  get creator(): Bytes | null {
+    let value = this.get("creator");
+    if (value === null || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBytes();
+    }
+  }
+
+  set creator(value: Bytes | null) {
+    if (value === null) {
+      this.unset("creator");
+    } else {
+      this.set("creator", Value.fromBytes(value as Bytes));
+    }
+  }
+
   get metadataUri(): string | null {
     let value = this.get("metadataUri");
     if (value === null || value.kind == ValueKind.NULL) {
