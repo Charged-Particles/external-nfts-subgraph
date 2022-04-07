@@ -6,7 +6,7 @@ import {
 
 import {
   ERC721 as NftContract,
-} from '../../generated/StandardNFT/ERC721';
+} from '../../generated/Rarible1/ERC721';
 
 import { standardNftId } from './idTemplates';
 

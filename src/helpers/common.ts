@@ -26,6 +26,7 @@ export function getBigIntValue(obj: TypedMap<string, JSONValue>, key: string): B
 };
 
 export function parseJsonFromIpfs(jsonUri: string): Wrapped<JSONValue> | null {
+  log.info("jsonUri: ", [jsonUri]);
   const ipfsHashParts = jsonUri.split('/');
   const ipfsHash = ipfsHashParts[ipfsHashParts.length-1];
 
@@ -45,13 +46,13 @@ export function parseJsonFromIpfs(jsonUri: string): Wrapped<JSONValue> | null {
     return null;
   }
 
-  const jsonData = json.fromBytes(data as Bytes);
-  if (jsonData.isNull()) {
-    log.info('JSON DATA FROM IPFS IS NULL {}', [ipfsHash]);
+  const jsonData = json.try_fromBytes(data as Bytes);
+  if (jsonData.isError) {
+    log.info('JSON DATA FROM IPFS IS NULL OR INVALID', [ipfsHash]);
     return null;
   }
 
-  return new Wrapped(jsonData);
+  return new Wrapped(jsonData.value);
 };
 
 const logItems = (value:JSONValue, userData: Value): void => {
