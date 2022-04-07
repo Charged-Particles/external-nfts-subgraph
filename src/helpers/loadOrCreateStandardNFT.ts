@@ -24,8 +24,17 @@ export function loadOrCreateStandardNFT(
     _nft.tokenAddress = tokenAddress;
 
     const boundNft = NftContract.bind(tokenAddress);
-    _nft.owner = boundNft.ownerOf(tokenId);
-    _nft.metadataUri = boundNft.tokenURI(tokenId);
+
+    const ownerCall = boundNft.try_ownerOf(tokenId);
+    if (!ownerCall.reverted) {
+      _nft.owner = ownerCall.value;
+    }
+
+    const uriCall = boundNft.try_tokenURI(tokenId);
+    if (!uriCall.reverted) {
+      _nft.metadataUri = uriCall.value;
+    }
+
     _nft.save();
   }
 

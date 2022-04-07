@@ -1,1 +1,6 @@
 node_modules
+.DS_Store
+subgraph.mainnet.yaml
+build/
+generated/
+build/Rarible1/Rarible1.wasm

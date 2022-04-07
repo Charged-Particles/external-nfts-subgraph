@@ -38,5 +38,9 @@
     "@graphprotocol/graph-cli": "0.21.1",
     "@graphprotocol/graph-ts": "0.20.0",
     "mustache": "4.0.1"
+  },
+  "resolutions": {
+    "moment": "2.27.0",
+    "assemblyscript": "git+https://github.com/AssemblyScript/assemblyscript.git#v0.6"
   }
 }

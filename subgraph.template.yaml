@@ -2,40 +2,18 @@ specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
-  - name: Rarible1
+  - name: Particlon
     kind: ethereum/contract
     network: {{network}}
     source:
-      address: "{{rarible1.address}}"
+      address: "{{particlon.address}}"
       abi: ERC721
-      startBlock: {{rarible1.startBlock}}
+      startBlock: {{particlon.startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: ./src/mappingForRarible721.ts
-      entities:
-        - StandardNFT
-      abis:
-        - name: ERC721
-          file: ./abis/ERC721.json
-        - name: ERC1155
-          file: ./abis/ERC1155.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,indexed uint256)
-          handler: handleTransfer
-  - name: Rarible2
-    kind: ethereum/contract
-    network: {{network}}
-    source:
-      address: "{{rarible2.address}}"
-      abi: ERC721
-      startBlock: {{rarible2.startBlock}}
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      file: ./src/mappingForRarible721.ts
+      file: ./src/mappingForOwnership.ts
       entities:
         - StandardNFT
       abis:
