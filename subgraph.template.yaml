@@ -24,3 +24,399 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
+  - name: rarible1
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{rarible1.address}}"
+      abi: ERC721
+      startBlock: {{rarible1.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: rarible2
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{rarible2.address}}"
+      abi: ERC721
+      startBlock: {{rarible2.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: rarible3
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{rarible3.address}}"
+      abi: ERC721
+      startBlock: {{rarible3.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: pluto
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{pluto.address}}"
+      abi: ERC721
+      startBlock: {{pluto.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: lepton2
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{lepton2.address}}"
+      abi: ERC721
+      startBlock: {{lepton2.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: trism1
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{trism1.address}}"
+      abi: ERC721
+      startBlock: {{trism1.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: trism2
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{trism2.address}}"
+      abi: ERC721
+      startBlock: {{trism2.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: lobsters
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{lobsters.address}}"
+      abi: ERC721
+      startBlock: {{lobsters.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: floorGen3
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{floorGen3.address}}"
+      abi: ERC721
+      startBlock: {{floorGen3.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: fluf
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{fluf.address}}"
+      abi: ERC721
+      startBlock: {{fluf.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: boredApes
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{boredApes.address}}"
+      abi: ERC721
+      startBlock: {{boredApes.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: mutantApes
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{mutantApes.address}}"
+      abi: ERC721
+      startBlock: {{mutantApes.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: doodle
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{doodle.address}}"
+      abi: ERC721
+      startBlock: {{doodle.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: moonBirds
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{moonBirds.address}}"
+      abi: ERC721
+      startBlock: {{moonBirds.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: admitOne
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{admitOne.address}}"
+      abi: ERC721
+      startBlock: {{admitOne.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: polymorph
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{polymorph.address}}"
+      abi: ERC721
+      startBlock: {{polymorph.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: realVisionPro
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{realVisionPro.address}}"
+      abi: ERC721
+      startBlock: {{realVisionPro.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+  - name: blueChips
+    kind: ethereum/contract
+    network: {{network}}
+    source:
+      address: "{{blueChips.address}}"
+      abi: ERC721
+      startBlock: {{blueChips.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappingForOwnership.ts
+      entities:
+        - StandardNFT
+      abis:
+        - name: ERC721
+          file: ./abis/ERC721.json
+        - name: ERC1155
+          file: ./abis/ERC1155.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer

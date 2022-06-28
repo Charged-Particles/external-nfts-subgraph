@@ -30,10 +30,10 @@ export function loadOrCreateStandardNFT(
       _nft.owner = ownerCall.value;
     }
 
-    const uriCall = boundNft.try_tokenURI(tokenId);
-    if (!uriCall.reverted) {
-      _nft.metadataUri = uriCall.value;
-    }
+    // const uriCall = boundNft.try_tokenURI(tokenId);
+    // if (!uriCall.reverted) {
+    //   _nft.metadataUri = uriCall.value;
+    // }
 
     _nft.save();
   }
