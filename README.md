@@ -1,6 +1,4 @@
-## Charged Particles -- External NFT Subgraph v1.0.0
-
-Currently only linking to Rarible 721 contract
+## Charged Particles -- External NFT Subgraph v1.0.2
 ---
 
 _MIT License_
