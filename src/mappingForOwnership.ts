@@ -6,7 +6,7 @@ import {
 
 import {
   Transfer,
-} from '../generated/Particlon/ERC721';
+} from '../generated/HMNZone/ERC721';
 
 import { nftAttributeId } from './helpers/idTemplates';
 import { loadOrCreateStandardNFT } from './helpers/loadOrCreateStandardNFT';
