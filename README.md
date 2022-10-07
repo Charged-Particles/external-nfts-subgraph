@@ -1,4 +1,4 @@
-## Charged Particles -- External NFT Subgraph v1.0.4
+## Charged Particles -- External NFT Subgraph v1.0.5
 ---
 
 _MIT License_
